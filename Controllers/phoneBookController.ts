@@ -22,7 +22,7 @@ export const createContact = async (req: Request, res: Response) => {
       message: "Created Contact Successfully",
       data: user,
     });
-  } catch (error) {
+  } catch (error : any) {
     return res.status(400).json({
         message : "Error Creating Contact",
         data : error.message
@@ -38,7 +38,7 @@ export const viewContacts = async (req: Request, res: Response) => {
       message: "Found Contacts Successfully",
       data: contact,
     });
-  } catch (error) {
+  } catch (error : any) {
     return res.status(400).json({
         message : "Error Finding Contacts",
         data : error.message
@@ -86,10 +86,10 @@ export const updateOneContact = async (req : Request , res : Response) => {
             message : "Updated Contact Successfully",
             data : update
         })
-    } catch (error) {
+    } catch (error : any) {
         return res.status(404).json({
             message : "Error Updating Contact",
-            DATA : error.message  
+            data : error.message  
         })
     }
 }
